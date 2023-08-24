@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,3 +20,20 @@ jobs:
 
       - name: create config
         run: bash create-config.sh
+
+  run:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install
+        run: bash install.sh
+
+      - name: create config
+        run: bash create-config.sh
+
+      - name: run
+        run: bash run.sh
+
