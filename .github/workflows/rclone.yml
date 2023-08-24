@@ -31,8 +31,8 @@ jobs:
       - name: install
         run: bash install.sh
 
-      - name: create config
-        run: bash create-config.sh
+      - name: config
+        run: bash config.sh
 
       - name: run
         run: bash run.sh
