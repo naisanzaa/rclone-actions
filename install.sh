@@ -4,6 +4,6 @@
 
 set -xe 
 
-apt install rclone -y
+sudo apt install rclone -y
 
 rclone --version
