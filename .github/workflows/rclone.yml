@@ -21,7 +21,7 @@ jobs:
       - name: config
         run: bash config.sh
         env:
-          SENTRY_DSN: ${{ secrets.RCLONE_CONFIG_FILE }}
+          RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
 
   run:
     needs: test
@@ -36,7 +36,7 @@ jobs:
       - name: config
         run: bash config.sh
         env:
-          SENTRY_DSN: ${{ secrets.RCLONE_CONFIG_FILE }}
+          RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
 
       - name: run
         run: bash run.sh
