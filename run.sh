@@ -1,4 +1,6 @@
 #!/bin/bash 
 
+RCLONE="rclone --config rclone.conf"
+
 # add rclone commands here
-rclone --config rclone.conf --version
+eval ${RCLONE} listremotes
