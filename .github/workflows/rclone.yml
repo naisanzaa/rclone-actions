@@ -30,6 +30,12 @@ jobs:
         run: bash config.sh
         env:
           RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
+      
+      - name: rclone key check
+        run: bash rclone-key-check.sh
+      
+      - name: rclone lsd
+        run: bash rclone-lsd.sh
 
   run:
     needs: test
