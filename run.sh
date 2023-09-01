@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+set -e
+
 RCLONE="rclone --config rclone.conf"
 
 # add rclone commands here
