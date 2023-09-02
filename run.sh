@@ -19,5 +19,5 @@ ${RCLONE} listremotes
 
 # chaofamily
 #${RCLONE} sync -v --delete-before chaofamily-gdrive:family       wasabi-eu:archive-family          >> /dev/null 2>&1
-${RCLONE} sync -v --delete-before chaofamily-gdrive:cjguidance   wasabi-eu:archive-cjguidance      >> /dev/null 2>&1
-#${RCLONE} sync -v --delete-before chaofamily-gdrive:family       chaofamily-photos:album/family    >> /dev/null 2>&1
+#${RCLONE} sync -v --delete-before chaofamily-gdrive:cjguidance   wasabi-eu:archive-cjguidance      >> /dev/null 2>&1
+${RCLONE} sync -v --delete-before chaofamily-gdrive:family       chaofamily-photos:album/family    >> /dev/null 2>&1
