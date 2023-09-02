@@ -7,9 +7,9 @@ concurrency:
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "*" ]
   schedule:
     # At minute 0 past every 6th hour.
     - cron: "0 */6 * * *"
