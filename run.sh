@@ -9,8 +9,8 @@ ${RCLONE} listremotes
 
 # eric
 #${RCLONE} sync -v --delete-before naisanza-gdrive:home/eric/pictures/Memories           naisanza-photos:album/Memories     >> /dev/null 2>&1
-${RCLONE} sync -v --delete-before naisanza-gdrive:home/eric/pictures/Memories/Life      chaofamily-photos:album/Eric/Life  >> /dev/null 2>&1
-#${RCLONE} sync -v --delete-before --drive-acknowledge-abuse naisanza-gdrive:home/eric   wasabi:archive-eric                >> /dev/null 2>&1
+#${RCLONE} sync -v --delete-before naisanza-gdrive:home/eric/pictures/Memories/Life      chaofamily-photos:album/Eric/Life  >> /dev/null 2>&1
+${RCLONE} sync -v --delete-before --drive-acknowledge-abuse naisanza-gdrive:home/eric   wasabi:archive-eric                >> /dev/null 2>&1
 #${RCLONE} sync -v --delete-before --drive-acknowledge-abuse naisanza-gdrive:home/eric   naisanza-onedrive:home/eric        >> /dev/null 2>&1
 
 # dad
