@@ -52,6 +52,6 @@ jobs:
         env:
           RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
 
-      - name: run
-        run: bash run.sh
+#      - name: run
+#        run: bash run.sh
 
