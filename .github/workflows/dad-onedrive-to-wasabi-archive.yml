@@ -1,4 +1,4 @@
-name: config name
+name: dad-onedrive-to-wasabi-archive
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

@@ -1,4 +1,4 @@
-name: config name
+name: chaofamily-gdrive-cjguidance-to-wasabi-eu-archive
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

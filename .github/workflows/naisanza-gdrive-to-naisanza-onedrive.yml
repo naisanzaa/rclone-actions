@@ -1,4 +1,4 @@
-name: config name
+name: naisanza-gdrive-to-naisanza-onedrive
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

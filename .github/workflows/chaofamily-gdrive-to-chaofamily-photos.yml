@@ -1,4 +1,4 @@
-name: config name
+name: chaofamily-gdrive-to-chaofamily-photos
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
