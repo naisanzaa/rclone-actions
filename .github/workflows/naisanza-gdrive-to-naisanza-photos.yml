@@ -1,0 +1,57 @@
+name: config name
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "*" ]
+  schedule:
+    # At minute 0 past every 24th hour.
+    - cron: "0 */24 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install
+        run: bash install.sh
+
+      - name: config
+        run: bash config.sh
+        env:
+          RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
+      
+      - name: rclone key check
+        run: bash rclone-key-check.sh
+      
+      - name: rclone lsd
+        run: bash rclone-lsd.sh
+
+  run:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install
+        run: bash install.sh
+
+      - name: config
+        run: bash config.sh
+        env:
+          RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
+
+      - name: run
+        run: bash naisanza-gdrive-to-naisanza-photos.sh
+
