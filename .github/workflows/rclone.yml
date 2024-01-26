@@ -11,12 +11,29 @@ on:
   pull_request:
     branches: [ "*" ]
   schedule:
-    # At minute 0 past every 24th hour.
-    - cron: "0 */24 * * *"
+    # At 00:00 on day-of-month 1.
+    - cron: "0 0 1 * *"
 
   workflow_dispatch:
 
 jobs:
+  actions_keepalive:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+
+    name: Github Actions KeepAlive
+    steps:
+      - uses: actions/checkout@v3
+      - name: make commit
+        # Uses GitHub action defined in https://github.com/FredaXin/gitlit
+        uses: TheShellLand/github-actions-keepalive@latest
+        with:
+          # Change to your GitHub username
+          user-name: naisanzaa
+          # Change to your email used for GitHub account
+          user-email: naisanza@gmail.com
+
   test:
     runs-on: ubuntu-latest
 
@@ -30,10 +47,10 @@ jobs:
         run: bash config.sh
         env:
           RCLONE_CONFIG_FILE: ${{ secrets.RCLONE_CONFIG_FILE }}
-      
+
       - name: rclone key check
         run: bash rclone-key-check.sh
-      
+
       - name: rclone lsd
         run: bash rclone-lsd.sh
 
