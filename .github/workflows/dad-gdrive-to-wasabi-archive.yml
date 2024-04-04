@@ -1,4 +1,4 @@
-name: dad-gdrive-to-wasabi-archive
+name: disabled dad-gdrive-to-wasabi-archive
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -7,12 +7,9 @@ concurrency:
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ "none" ]
   pull_request:
-    branches: [ "*" ]
-  schedule:
-    # At minute 0 past every 24th hour.
-    - cron: "0 */24 * * *"
+    branches: [ "none" ]
 
   workflow_dispatch:
 
