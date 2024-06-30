@@ -4,4 +4,4 @@
 
 cd "$(dirname $0)" && set -xe
 
-docker build .
+docker build -t rclone ../
