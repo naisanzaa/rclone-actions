@@ -7,9 +7,12 @@ concurrency:
 
 on:
   push:
-    branches: [ "none" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "none" ]
+    branches: [ "*" ]
+  schedule:
+    # At minute 0 past every 24th hour.
+    - cron: "0 */24 * * *"
 
   workflow_dispatch:
 
