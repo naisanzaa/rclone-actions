@@ -4,7 +4,7 @@
 
 cd "$(dirname $0)"; set -xe
 
-RCLONE="rclone --config rclone.conf"
+RCLONE="$(which rclone) --config rclone.conf"
 
 ${RCLONE} config reconnect chaofamily-gdrive:
 ${RCLONE} config reconnect chaofamily-photos:
